@@ -2,9 +2,13 @@
     "name": "entense/extractor",
     "type": "library",
     "require": {
-        "php": "^8.1"
+        "php": "^8.1",
+        "entense/php-type": "^0.1"
     },
     "autoload": {
+        "psr-4": {
+            "Entense\\Extractor\\": "src/"
+        },
         "classmap": [
             "src/"
         ]
