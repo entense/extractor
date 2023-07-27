@@ -8,6 +8,7 @@
         "entense/php-type": "^0.1"
     },
     "require-dev": {
+        "ergebnis/composer-normalize": "^2.4",
         "php-parallel-lint/php-parallel-lint": "^1.2",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-strict-rules": "^0.12",
