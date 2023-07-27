@@ -16,11 +16,19 @@
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.4",
+        "ergebnis/phpstan-rules": "^0.15",
         "php-parallel-lint/php-parallel-lint": "^1.2",
         "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan-deprecation-rules": "^0.12",
         "phpstan/phpstan-strict-rules": "^0.12",
         "phpunit/phpunit": "^9.4",
-        "spaceemotion/php-coding-standard": "dev-master"
+        "roave/security-advisories": "dev-latest",
+        "slevomat/coding-standard": "dev-master",
+        "spaceemotion/php-coding-standard": "dev-master",
+        "spaze/phpstan-disallowed-calls": "^1.5",
+        "symplify/easy-coding-standard": "^9.3",
+        "thecodingmachine/phpstan-safe-rule": "^1.0",
+        "thecodingmachine/phpstan-strict-rules": "^0.12"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
