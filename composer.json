@@ -15,6 +15,8 @@
         "spaceemotion/php-coding-standard": "dev-master",
         "phpunit/phpunit": "^9.4"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Entense\\Extractor\\": "src/"
@@ -22,6 +24,24 @@
         "classmap": [
             "src/"
         ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Entense\\Extractor\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.1"
+        },
+        "preferred-install": "dist",
+        "process-timeout": 0,
+        "sort-packages": true
     },
     "scripts": {
         "test": "phpunit"
