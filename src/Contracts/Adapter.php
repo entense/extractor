@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Entense\Extractor\Contracts;
 
-interface Transform
+interface Adapter
 {
     public function toArray(): array;
 }

@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Entense\Extractor\Concerns;
 
+use Entense\Extractor\Adapters\GuzzleResponse;
+use Entense\Extractor\Adapters\Request;
 use Entense\Extractor\Contracts\TransformableData;
 use Entense\Extractor\DataTransferObject;
-use Entense\Extractor\Transform\{GuzzleResponse, Request};
 use Entense\Extractor\Transformers\DataTransformer;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Contracts\Support\Arrayable;

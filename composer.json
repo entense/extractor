@@ -1,5 +1,7 @@
 {
     "name": "entense/extractor",
+    "description": "A data transfer object inspired by Rust's serde",
+    "license": "MIT",
     "type": "library",
     "require": {
         "php": "^8.1",

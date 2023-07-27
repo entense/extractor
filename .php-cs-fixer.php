@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 $rules = [
     '@Symfony' => true,
     'array_syntax' => ['syntax' => 'short'],
@@ -7,10 +9,12 @@ $rules = [
     'ordered_imports' => ['sort_algorithm' => 'alpha'],
     'no_unused_imports' => true,
     'not_operator_with_successor_space' => false,
-    'trailing_comma_in_multiline' => ['elements' => []],
+    'trailing_comma_in_multiline' => [
+        'elements' => [],
+    ],
     'clean_namespace' => true,
     'single_import_per_statement' => false,
-    'group_import' => true,
+    'group_import' => false,
     'unary_operator_spaces' => true,
     'binary_operator_spaces' => true,
     'phpdoc_align' => ['align' => 'left'],
@@ -47,22 +51,39 @@ $rules = [
     'no_spaces_after_function_name' => true,
     'no_spaces_inside_parenthesis' => true,
     'blank_line_after_opening_tag' => true,
-    'braces' => true,
+    'braces' => [
+        'allow_single_line_closure' => false,
+        'allow_single_line_anonymous_class_with_empty_body' => false,
+    ],
     'no_whitespace_before_comma_in_array' => true,
     'trim_array_spaces' => true,
     'fully_qualified_strict_types' => true,
-    'no_trailing_comma_in_singleline' => ['elements' => [
-        'arguments',
-        'array',
-        'array_destructuring',
-        'group_import',
-    ]],
-    'multiline_whitespace_before_semicolons' => ['strategy' => 'no_multi_line'],
+    'no_trailing_comma_in_singleline' => [
+        'elements' => [
+            'arguments',
+            'array',
+            'array_destructuring',
+            'group_import',
+        ],
+    ],
+    'multiline_whitespace_before_semicolons' => [
+        'strategy' => 'no_multi_line',
+    ],
     'visibility_required' => true,
     'increment_style' => false,
-    'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
-    'global_namespace_import' => ['import_classes' => true, 'import_functions' => true, 'import_constants' => true],
-    'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
+    'yoda_style' => [
+        'equal' => false,
+        'identical' => false,
+        'less_and_greater' => false,
+    ],
+    'global_namespace_import' => [
+        'import_classes' => true,
+        'import_functions' => true,
+        'import_constants' => true,
+    ],
+    'whitespace_after_comma_in_array' => [
+        'ensure_single_space' => true,
+    ],
 ];
 
 $excludes = [
@@ -71,7 +92,7 @@ $excludes = [
     'node_modules',
 ];
 
-$config = new PhpCsFixer\Config;
+$config = new PhpCsFixer\Config();
 $config->setRules($rules);
 
 return $config;
