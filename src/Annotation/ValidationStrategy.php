@@ -14,7 +14,7 @@ class ValidationStrategy
     private FailureCollection $collection;
     private FailureHandler $handler;
 
-    public function __construct(?FailureCollection $collection = null, ?FailureHandler $handler = null, private bool $failFast = true)
+    public function __construct(FailureCollection $collection = null, FailureHandler $handler = null, private bool $failFast = true)
     {
         $this->collection = $collection ?? new FailureCollection();
         $this->handler = $handler ?? new FailureHandler();

@@ -13,9 +13,14 @@ trait TransformableData
         return $this->transform(transformValues: false);
     }
 
-    final public function toArray(): array
+    public function toArray(): array
     {
         return $this->transform();
+    }
+
+    final public function filtered(): array
+    {
+        return array_filter($this->transform(transformValues: false));
     }
 
     final public function toJson($options = 0): string
@@ -23,7 +28,7 @@ trait TransformableData
         return json_encode($this->transform(), $options);
     }
 
-    final public function jsonSerialize(): array
+    public function jsonSerialize(): array
     {
         return $this->toArray();
     }

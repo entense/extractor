@@ -14,6 +14,8 @@ interface TransformableData extends JsonSerializable, Jsonable, Arrayable
 
     public function toArray(): array;
 
+    public function filtered(): array;
+
     public function toJson($options = 0): string;
 
     public function jsonSerialize(): array;

@@ -6,7 +6,9 @@ namespace Entense\Extractor\Annotation;
 
 use Attribute;
 use Entense\Extractor\Annotation\Contracts\Transformation;
-use Entense\Type\{Castable, Type as PhpType, UnionType};
+use Entense\Type\Castable;
+use Entense\Type\Type as PhpType;
+use Entense\Type\UnionType;
 use InvalidArgumentException;
 use ReflectionClass;
 use ReflectionException;

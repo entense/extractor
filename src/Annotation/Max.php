@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Entense\Extractor\Annotation;
 
-use Entense\Extractor\Annotation\Contracts\Validation;
 use Attribute;
+use Entense\Extractor\Annotation\Contracts\Validation;
 
 #[Attribute(flags: Attribute::TARGET_PROPERTY)]
 final class Max implements Validation
@@ -16,7 +16,7 @@ final class Max implements Validation
 
     public function validate(mixed $value, ValidationStrategy $validationStrategy): void
     {
-        if ((is_int($value) || is_float($value))) {
+        if (is_int($value) || is_float($value)) {
             if ($value > $this->maxValue) {
                 $validationStrategy->setFailure($this->message ?? 'Value ' . var_export($value, true) . ' of {path} must be <= ' . $this->maxValue);
             }

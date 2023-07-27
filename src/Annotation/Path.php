@@ -65,7 +65,7 @@ final class Path
 
             // Multiselect
             if (preg_match('/^{(.*?)}$/S', $step, $matches) === 1) {
-                [, $subSteps] = $matches;
+                list(, $subSteps) = $matches;
 
                 $results = [];
                 foreach (explode(',', $subSteps) as $subStep) {
@@ -91,8 +91,6 @@ final class Path
     }
 
     /**
-     * @param string $path
-     *
      * @return string[]
      */
     private function split(string $path): array
@@ -120,8 +118,6 @@ final class Path
 
     /**
      * @param string[] $steps
-     *
-     * @return string
      */
     private function assemble(array $steps): string
     {

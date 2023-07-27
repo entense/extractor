@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace Entense\Extractor;
 
 use Entense\Extractor\Annotation\Contracts\Finalize;
-use Entense\Extractor\Annotation\{SelfValidation, ValidationStrategy};
+use Entense\Extractor\Annotation\SelfValidation;
+use Entense\Extractor\Annotation\ValidationStrategy;
 use Entense\Extractor\Contracts\DataTransfer;
-use Entense\Extractor\Failure\{FailureCollection, FailureHandler};
+use Entense\Extractor\Failure\FailureCollection;
+use Entense\Extractor\Failure\FailureHandler;
 use ReflectionAttribute;
 use ReflectionClass;
 use ReflectionException;

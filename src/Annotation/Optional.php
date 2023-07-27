@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Entense\Extractor\Annotation;
 
 use Attribute;
+use Entense\Extractor\Contracts\BaseDataTransfer;
 use Entense\Type\Defaultable;
 use Entense\Type\Type as PhpType;
 use InvalidArgumentException;
 use ReflectionNamedType;
 use ReflectionProperty;
-use Entense\Extractor\Contracts\BaseDataTransfer;
 
 #[Attribute(flags: Attribute::TARGET_PROPERTY)]
 final class Optional

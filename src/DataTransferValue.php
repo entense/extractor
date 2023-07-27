@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Entense\Extractor;
 
-use Entense\Extractor\Annotation\Contracts\{Transformation, Validation};
-use Entense\Extractor\Annotation\{Type, ValidationStrategy};
+use Entense\Extractor\Annotation\Contracts\Transformation;
+use Entense\Extractor\Annotation\Contracts\Validation;
+use Entense\Extractor\Annotation\Type;
+use Entense\Extractor\Annotation\ValidationStrategy;
 use ReflectionAttribute;
 use ReflectionException;
 use ReflectionNamedType;

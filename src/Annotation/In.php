@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Entense\Extractor\Annotation;
 
-use Entense\Extractor\Annotation\Contracts\Validation;
-
 use Attribute;
+use Entense\Extractor\Annotation\Contracts\Validation;
 
 #[Attribute(Attribute::TARGET_PROPERTY)]
 final class In implements Validation
@@ -26,7 +25,7 @@ final class In implements Validation
                     $this->message ?? '{value} of {path} must be in {values}',
                     [
                         '{value}' => var_export($value, true),
-                        '{values}' => var_export($this->values, true)
+                        '{values}' => var_export($this->values, true),
                     ]
                 )
             );

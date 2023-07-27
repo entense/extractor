@@ -22,7 +22,6 @@ final class DataTransferProperty
     private array $names = [];
 
     private DataTransfer $instance;
-    private DataTransferObject $parent;
 
     private bool $hasDefaultValue;
     private mixed $defaultValue;
@@ -43,7 +42,6 @@ final class DataTransferProperty
 
         $this->ignore = $this->property->getAttributes(Ignore::class) !== [];
         $this->setNames();
-        $this->parent = $parent;
         $this->instance = $parent->getInstance();
 
         if ($property->hasDefaultValue()) {
@@ -221,7 +219,15 @@ final class DataTransferProperty
 
         foreach ($this->property->getAttributes(Alias::class) as $attribute) {
             $alias = $attribute->newInstance();
-            $names[$alias->getName()] = true;
+            $name = $alias->getName($this->property);
+
+            if (is_array($name)) {
+                foreach ($name as $singleName) {
+                    $names[$singleName] = true;
+                }
+            } else {
+                $names[$name] = true;
+            }
         }
 
         $this->names = array_keys(
@@ -233,7 +239,7 @@ final class DataTransferProperty
     {
         match (count($this->names)) {
             0, 1 => $this->validationStrategy->setFailure('Expected a value for {path}'),
-            default => $this->validationStrategy->setFailure('Expected one of "' . implode(', ', $this->names) . '"')
+            default => $this->validationStrategy->setFailure('Expected one of "' . implode(', ', $this->names) . '"'),
         };
     }
 }

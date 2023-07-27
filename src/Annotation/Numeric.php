@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Entense\Extractor\Annotation;
 
 use Attribute;
-
 use Entense\Extractor\Annotation\Contracts\{Transformation, Validation};
 use ReflectionProperty;
 
@@ -21,9 +20,9 @@ final class Numeric implements Validation, Transformation
     {
         if (number($value) === null) {
             $validationStrategy->setFailure(strtr(
-                    $this->message ?? 'Value {value} of {path} is not numeric',
-                    ['{value}' => var_export($value, true)]
-                ));
+                $this->message ?? 'Value {value} of {path} is not numeric',
+                ['{value}' => var_export($value, true)]
+            ));
         }
     }
 

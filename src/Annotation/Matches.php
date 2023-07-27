@@ -3,8 +3,9 @@
 declare(strict_types=1);
 
 namespace Entense\Extractor\Annotation;
-use Entense\Extractor\Annotation\Contracts\Validation;
+
 use Attribute;
+use Entense\Extractor\Annotation\Contracts\Validation;
 
 #[Attribute(Attribute::TARGET_PROPERTY)]
 final class Matches implements Validation
@@ -22,7 +23,7 @@ final class Matches implements Validation
                     $this->message ?? '{value} of {path} does not match pattern {pattern}',
                     [
                         '{value}' => var_export($value, true),
-                        '{values}' => $this->pattern
+                        '{values}' => $this->pattern,
                     ]
                 )
             );

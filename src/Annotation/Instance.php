@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Entense\Extractor\Annotation;
 
-use Entense\Extractor\Annotation\Contracts\Validation;
 use Attribute;
+use Entense\Extractor\Annotation\Contracts\Validation;
 
 #[Attribute(flags: Attribute::TARGET_PROPERTY)]
 final class Instance implements Validation

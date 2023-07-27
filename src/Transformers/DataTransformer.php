@@ -5,7 +5,8 @@ namespace Entense\Extractor\Transformers;
 use BackedEnum;
 use DateTimeInterface;
 use Entense\Extractor\Annotation\Transform;
-use Entense\Extractor\Contracts\{AttributableData, TransformableData};
+use Entense\Extractor\Contracts\AttributableData;
+use Entense\Extractor\Contracts\TransformableData;
 use ReflectionAttribute;
 use ReflectionClass;
 use ReflectionProperty;
@@ -30,7 +31,7 @@ class DataTransformer
             return $this->toArray($data);
         }
 
-        return $this->all($data);
+        return $this->all($data, false);
     }
 
     final public function toArray(TransformableData $data): array
@@ -43,12 +44,16 @@ class DataTransformer
         return $data instanceof AttributableData ? $data->getAttributes() : [];
     }
 
-    final public function all(TransformableData $data): array
+    final public function all(TransformableData $data, int|false $conditions = ReflectionProperty::IS_PUBLIC): array
     {
         $output = [];
         $class = new ReflectionClass($data::class);
 
-        $properties = $class->getProperties(ReflectionProperty::IS_PUBLIC);
+        if ($conditions === false) {
+            $properties = $class->getProperties();
+        } else {
+            $properties = $class->getProperties($conditions);
+        }
 
         foreach ($properties as $property) {
             if ($property->isStatic()) {
