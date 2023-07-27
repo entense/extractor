@@ -21,8 +21,6 @@ final class DenyUnknownFields implements Finalize
     }
 
     /**
-     * {@inheritDoc}
-     *
      * @throws Throwable
      */
     public function finalize(array $input): void

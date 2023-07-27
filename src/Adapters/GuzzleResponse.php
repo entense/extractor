@@ -2,8 +2,8 @@
 
 namespace Entense\Extractor\Adapters;
 
-use Entense\Extractor\Contracts\Adapter;
 use GuzzleHttp\Psr7\Response;
+use Entense\Extractor\Contracts\Adapter;
 
 final class GuzzleResponse implements Adapter
 {

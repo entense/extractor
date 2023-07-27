@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+
 $rules = [
     '@Symfony' => true,
     'array_syntax' => ['syntax' => 'short'],
@@ -43,7 +46,7 @@ $rules = [
     'new_with_braces' => false,
     'concat_space' => ['spacing' => 'one'],
     'doctrine_annotation_spaces' => true,
-    'no_blank_lines_before_namespace' => false,
+    'blank_lines_before_namespace' => false,
     'no_leading_namespace_whitespace' => true,
     'single_line_after_imports' => true,
     'no_trailing_whitespace_in_comment' => true,
@@ -51,10 +54,6 @@ $rules = [
     'no_spaces_after_function_name' => true,
     'no_spaces_inside_parenthesis' => true,
     'blank_line_after_opening_tag' => true,
-    'braces' => [
-        'allow_single_line_closure' => false,
-        'allow_single_line_anonymous_class_with_empty_body' => false,
-    ],
     'no_whitespace_before_comma_in_array' => true,
     'trim_array_spaces' => true,
     'fully_qualified_strict_types' => true,
@@ -92,7 +91,13 @@ $excludes = [
     'node_modules',
 ];
 
-$config = new PhpCsFixer\Config();
-$config->setRules($rules);
+$finder = Finder::create()
+    ->in(['src']);
+
+$config = new Config();
+
+return $config
+    ->setFinder($finder)
+    ->setRules($rules);
 
 return $config;
