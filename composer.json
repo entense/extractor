@@ -3,6 +3,13 @@
     "description": "A data transfer object inspired by Rust's serde",
     "license": "MIT",
     "type": "library",
+    "authors": [
+        {
+            "name": "Alexandr Ivanov",
+            "email": "entense@yandex.ru",
+            "role": "lead"
+        }
+    ],
     "require": {
         "php": "^8.1",
         "entense/php-type": "^0.1"
@@ -12,8 +19,8 @@
         "php-parallel-lint/php-parallel-lint": "^1.2",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-strict-rules": "^0.12",
-        "spaceemotion/php-coding-standard": "dev-master",
-        "phpunit/phpunit": "^9.4"
+        "phpunit/phpunit": "^9.4",
+        "spaceemotion/php-coding-standard": "dev-master"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
